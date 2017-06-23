@@ -20,8 +20,11 @@ namespace PendalePharmacy.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        // public ApplicationDbContext()
+        // : base("pendaleConnection", throwIfV1Schema: false)
         public ApplicationDbContext()
-            : base("pendaleConnection", throwIfV1Schema: false)
+            : base("<myConnectionStringNameInWebConfigFile>")
         {
         }
 
