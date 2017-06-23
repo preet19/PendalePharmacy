@@ -23,8 +23,7 @@ namespace PendalePharmacy.Models
 
         // public ApplicationDbContext()
         // : base("pendaleConnection", throwIfV1Schema: false)
-        public ApplicationDbContext()
-            : base("<myConnectionStringNameInWebConfigFile>")
+        public ApplicationDbContext() : base("pendaleConnection")
         {
         }
 
