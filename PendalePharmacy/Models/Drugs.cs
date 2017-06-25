@@ -12,6 +12,7 @@ namespace PendalePharmacy.Models
         public int DrugsID { get; set; }
 
         [Required]
+        [Display(Name = "Drug Name")]
         public string drugName { get; set; }
     }
 }
