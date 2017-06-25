@@ -12,7 +12,7 @@ namespace PendalePharmacy.Controllers
 {
     public class DrugsController : Controller
     {
-        private pendaleContext db = new pendaleContext();
+        private pendale db = new pendale();
 
         // GET: Drugs
         
