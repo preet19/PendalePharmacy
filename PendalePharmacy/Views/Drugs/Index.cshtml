@@ -7,7 +7,10 @@
 <h2>Index</h2>
 
 <p>
+@if (User.Identity.Name == "sumeetjudge@gmail.com")
+{
     @Html.ActionLink("Create New", "Create")
+} 
 </p>
 <table class="table table-striped table-hover">
     <tr>
@@ -17,9 +20,12 @@
         <th>
             @Html.DisplayNameFor(model => model.comments)
         </th>
+@if (User.Identity.Name == "sumeetjudge@gmail.com")
+{
         <th>
             Manage
         </th>
+}
     </tr>
 
 @foreach (var item in Model) {
@@ -30,11 +36,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.comments)
         </td>
+@if (User.Identity.Name == "sumeetjudge@gmail.com")
+{
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DrugsID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DrugsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DrugsID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.DrugsID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.DrugsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.DrugsID })
         </td>
+}
     </tr>
 }
 

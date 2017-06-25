@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using PendalePharmacy.Models;
 
 [assembly: OwinStartupAttribute(typeof(PendalePharmacy.Startup))]
 namespace PendalePharmacy
@@ -10,5 +11,6 @@ namespace PendalePharmacy
         {
             ConfigureAuth(app);
         }
+       
     }
 }

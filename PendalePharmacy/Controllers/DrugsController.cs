@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using PendalePharmacy.Models;
 
+
 namespace PendalePharmacy.Controllers
 {
     public class DrugsController : Controller
@@ -38,6 +39,7 @@ namespace PendalePharmacy.Controllers
         }
 
         // GET: Drugs/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -48,6 +50,7 @@ namespace PendalePharmacy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Create([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
             if (ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace PendalePharmacy.Controllers
         }
 
         // GET: Drugs/Edit/5
+        [Authorize()]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,18 +84,23 @@ namespace PendalePharmacy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult Edit([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(drugs).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(drugs);
+           
+                if (ModelState.IsValid)
+                {
+                    db.Entry(drugs).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            
+                return View(drugs);
+            
         }
 
         // GET: Drugs/Delete/5
+        [Authorize()]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,6 +118,7 @@ namespace PendalePharmacy.Controllers
         // POST: Drugs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize()]
         public ActionResult DeleteConfirmed(int id)
         {
             Drugs drugs = db.Drugs.Find(id);
@@ -125,5 +135,9 @@ namespace PendalePharmacy.Controllers
             }
             base.Dispose(disposing);
         }
+
+       
+
+
     }
 }
