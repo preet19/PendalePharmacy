@@ -48,7 +48,7 @@ namespace PendalePharmacy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DrugsID,drugName")] Drugs drugs)
+        public ActionResult Create([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +80,7 @@ namespace PendalePharmacy.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DrugsID,drugName")] Drugs drugs)
+        public ActionResult Edit([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
             if (ModelState.IsValid)
             {

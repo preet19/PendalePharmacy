@@ -14,5 +14,7 @@ namespace PendalePharmacy.Models
         [Required]
         [Display(Name = "Drug Name")]
         public string drugName { get; set; }
+        [Display(Name = "Pharmacist comments")]
+        public string comments { get; set; }
     }
 }
