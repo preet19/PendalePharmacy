@@ -53,11 +53,18 @@ namespace PendalePharmacy.Controllers
         [Authorize()]
         public ActionResult Create([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
-            if (ModelState.IsValid)
+            if (User.Identity.Name == "sumeetjudge@gmail.com")
             {
-                db.Drugs.Add(drugs);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Drugs.Add(drugs);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            else
+            {
+                return RedirectToAction("~//Account/Login");
             }
 
             return View(drugs);
@@ -87,15 +94,21 @@ namespace PendalePharmacy.Controllers
         [Authorize()]
         public ActionResult Edit([Bind(Include = "DrugsID,drugName,comments")] Drugs drugs)
         {
-           
+            if (User.Identity.Name == "sumeetjudge@gmail.com")
+            {
                 if (ModelState.IsValid)
                 {
                     db.Entry(drugs).State = EntityState.Modified;
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-            
-                return View(drugs);
+            }
+            else
+            {
+                return RedirectToAction("~//Account/Login");
+            }
+
+            return View(drugs);
             
         }
 
@@ -121,9 +134,18 @@ namespace PendalePharmacy.Controllers
         [Authorize()]
         public ActionResult DeleteConfirmed(int id)
         {
-            Drugs drugs = db.Drugs.Find(id);
-            db.Drugs.Remove(drugs);
-            db.SaveChanges();
+            if (User.Identity.Name == "sumeetjudge@gmail.com")
+            {
+                Drugs drugs = db.Drugs.Find(id);
+                db.Drugs.Remove(drugs);
+                db.SaveChanges();
+            }
+
+            else
+            {
+                return RedirectToAction("~//Account/Login");
+            }
+
             return RedirectToAction("Index");
         }
 
