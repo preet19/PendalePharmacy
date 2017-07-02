@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace PendalePharmacy.Controllers
 {
-    public class PrescriptionsController : Controller
+    public class FaqController : Controller
     {
         // GET: Prescriptions
         public ActionResult Index()

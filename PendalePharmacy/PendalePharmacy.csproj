@@ -173,7 +173,7 @@
     <Compile Include="Controllers\DrugsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PrescriptionsController.cs" />
+    <Compile Include="Controllers\FaqController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,7 +265,7 @@
     <Content Include="Views\Drugs\Details.cshtml" />
     <Content Include="Views\Drugs\Edit.cshtml" />
     <Content Include="Views\Drugs\Index.cshtml" />
-    <Content Include="Views\Prescriptions\Index.cshtml" />
+    <Content Include="Views\FAQ\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
