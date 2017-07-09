@@ -3,5 +3,70 @@
     ViewBag.Title = "FAQ";
 }
 
-<a class="btn btn-primary" href="">Ask Question</a>
+<br />
+
+<link type="text/css" rel="stylesheet" href="~/Content/materialize/css/materialize.min.css" media="screen,projection" />
+
+
+<script>
+    (function () {
+        var app = angular.module("FaqCtrl", []);
+
+
+        var Main = function ($scope) {
+
+            $scope.showMe = function () {
+                if ($scope.show == false) {
+                    $scope.show = true;
+                }
+                else {
+                    $scope.show = false;
+                }
+
+            }
+            $scope.hideMe = function () {
+                $scope.show = false;
+            }
+
+        }
+
+        app.controller("Main", Main);
+    }());
+</script>
+
+
+<div ng-app="FaqCtrl" ng-controller="Main">
+    <a class="btn btn-primary" style="background-color:#5c2040" ng-click="showMe()">
+        <md-icon  class="fa fa-plus"></md-icon> Ask Question
+    </a>
+
+
+
+    <form ng-show="show">
+        <div class="md-form">
+            <input type="text" id="question" class="form-control">
+            <label for="question" class="">Enter your question</label>
+        </div>
+
+        <div class="md-form">
+            <input type="text" id="name" class="form-control">
+            <label for="name" class="">your name</label>
+        </div>
+
+        <div class="md-form">
+            <input type="email" id="email" class="form-control">
+            <label for="email" class="">your email</label>
+        </div>
+        <br />
+        <div class="md-form">
+            <a href="" class="btn btn-primary btn-lg" style="background-color:#5c2040">Submit</a>
+        </div>
+    </form>
+
+    <div>
+        All questions asked will display here 
+    </div>
+
+</div>
+
 

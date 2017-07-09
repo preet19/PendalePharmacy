@@ -6,7 +6,9 @@
     <title>@ViewBag.Title - Pendale Pharmacy</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/angular.js"></script>
 
+   
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
@@ -41,7 +43,13 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+        
+    <script type="text/javascript" src="~/Scripts/materialize/materialize.min.js"></script>
+       
     <script src="~/Scripts/jquery.slides.min.js" type="text/javascript"></script>
+    
+
     @RenderSection("scripts", required: false)
 
     <script>
@@ -75,5 +83,7 @@
       });
     });
     </script>
+
+
 </body>
 </html>
