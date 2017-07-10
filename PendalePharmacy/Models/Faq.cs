@@ -17,5 +17,6 @@
         public string name { get; set; }
         [Required]
         public string email { get; set; }
+
     }
 }

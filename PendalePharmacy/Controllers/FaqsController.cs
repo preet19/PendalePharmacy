@@ -7,7 +7,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using PendalePharmacy.Models;
-using PendalePharmacy.ViewModels;
 
 namespace PendalePharmacy.Controllers
 {
@@ -40,16 +39,15 @@ namespace PendalePharmacy.Controllers
         // GET: Faqs/Create
         public ActionResult Create()
         {
-            Both viewModel = new Both(); //initialize it
-                                         // -To Do- Fill it
-            viewModel.Faq = db.Faq.AddRange;
-            viewModel.Faq1;
+            
 
-            return View(viewModel);
+            return View();
 
-            fdfdfgdfgdf
+      
             
         }
+
+       
 
         // POST: Faqs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
