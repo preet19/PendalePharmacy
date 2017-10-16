@@ -33,41 +33,9 @@
 <div style="padding:10px">
 
 
-    <a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>
+    <a>Under Construction</a>
 </div>
 
-
-<div ng-app="FaqCtrl" ng-controller="Main" style="margin-top:20px">
-   
-
-        @foreach (var item in Model)
-        {
-            <div>
-                <a class="btn btn-primary" style="background-color:#5c2040;min-width:750px"
-                    ng-click="showMe()">
-                    <md-icon class="fa fa-plus"></md-icon>
-                   
-                    View @Html.DisplayFor(modelItem => item.name) Comments
-                       
-                    
-                </a>
-                
-
-                   
-                    <div ng-show="show" style="margin-top:20px;">
-                        <div>
-                            User Comment:-  @Html.DisplayFor(modelItem => item.comments)
-                        </div>
-                        <div>
-                          User Email:-  @Html.DisplayFor(modelItem => item.email)
-                        </div>
-                    </div>
-
-              
-
-                </div>
-             
-        }
 
    
 
